@@ -4,22 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26f62efd-8297-463f-a472-da28d6e28121" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/browsers.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="26f62efd-8297-463f-a472-da28d6e28121" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/base/BaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/config/UrlPaths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/driver/DriverFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/smoke/HomeSmokeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/utils/CookieBannerUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/log4j2.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +32,50 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "MichalZajaczkowski"
+  }
+}]]></component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="first-config" />
+                    <option name="lastUsedInstant" value="1761069747" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1761069746" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MichalZajaczkowski/java-selenium-hub",
+    "accountId": "539f3c3b-e724-4318-82c7-5728a668f63e"
+  }
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -58,7 +98,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "TestNG.HomePageTests.executor": "Run",
-    "git-widget-placeholder": "master",
+    "TestNG.HomeSmokeTest.executor": "Run",
+    "git-widget-placeholder": "first-config",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,12 +116,12 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.HomeSmokeTest">
     <configuration name="HomePageTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="java-selenium-hub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,8 +134,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HomeSmokeTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="java-selenium-hub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.smoke.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
+      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.HomeSmokeTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.HomeSmokeTest" />
         <item itemvalue="TestNG.HomePageTests" />
       </list>
     </recent_temporary>
@@ -116,8 +175,17 @@
       <updated>1760977905159</updated>
       <workItem from="1760977906005" duration="10027000" />
       <workItem from="1761045457889" duration="85000" />
-      <workItem from="1761063421110" duration="5697000" />
+      <workItem from="1761063421110" duration="14985000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1761069723769</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761069723769</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,5 +201,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>

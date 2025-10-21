@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="JavaSeleniumHubSuite" parallel="pl.devqa.javaseleniumhub.tests" thread-count="2">
+    <listeners>
+        <!-- Allure TestNG listener -->
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    <test name="SmokeTests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="pl.devqa.javaseleniumhub.pl.devqa.javaseleniumhub.tests.smoke.HomeSmokeTest"/>
+        </classes>
+    </test>
+    <test name="RegressionTests">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="pl.devqa.javaseleniumhub.pl.devqa.javaseleniumhub.tests.regression.HomeRegTest"/>
+        </classes>
+    </test>
+</suite>

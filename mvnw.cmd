@@ -82,7 +82,7 @@ goto error
 
 :init
 
-@REM Find the project base dir, i.e. the directory that contains the folder ".mvn".
+@REM Find the project pl.devqa.javaseleniumhub.base dir, i.e. the directory that contains the folder ".mvn".
 @REM Fallback to current working directory if not found.
 
 set MAVEN_PROJECTBASEDIR=%MAVEN_BASEDIR%
@@ -108,10 +108,10 @@ cd "%EXEC_DIR%"
 
 :endDetectBaseDir
 
-IF NOT EXIST "%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config" goto endReadAdditionalConfig
+IF NOT EXIST "%MAVEN_PROJECTBASEDIR%\.mvn\jvm.pl.devqa.javaseleniumhub.config" goto endReadAdditionalConfig
 
 @setlocal EnableExtensions EnableDelayedExpansion
-for /F "usebackq delims=" %%a in ("%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config") do set JVM_CONFIG_MAVEN_PROPS=!JVM_CONFIG_MAVEN_PROPS! %%a
+for /F "usebackq delims=" %%a in ("%MAVEN_PROJECTBASEDIR%\.mvn\jvm.pl.devqa.javaseleniumhub.config") do set JVM_CONFIG_MAVEN_PROPS=!JVM_CONFIG_MAVEN_PROPS! %%a
 @endlocal & set JVM_CONFIG_MAVEN_PROPS=%JVM_CONFIG_MAVEN_PROPS%
 
 :endReadAdditionalConfig
