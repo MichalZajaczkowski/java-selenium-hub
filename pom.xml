@@ -81,38 +81,81 @@
     </dependencies>
     <build>
         <plugins>
-            <!-- Maven Compiler Plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                </configuration>
-            </plugin>
-
-            <!-- Surefire plugin for TestNG suites -->
+            <!-- Surefire: wyniki do stałego katalogu w root (nie w target) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.5.2</version>
                 <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <reportsDirectory>target/surefire-reports</reportsDirectory>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                    <systemProperties>
+                        <property>
+                            <name>allure.results.directory</name>
+                            <value>${project.basedir}/allure-results</value>
+                        </property>
+                    </systemProperties>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
-
-            <!-- Allure Report Plugin (optional for report generation) -->
+            <!-- AntRun: automatyczny cykl historii trendów -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <!-- 1) start: czyść wyniki i wstrzyknij trwałą historię -->
+                    <execution>
+                        <id>prepare-allure-results-and-history</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <delete dir="${project.basedir}/allure-results" quiet="true"/>
+                                <mkdir dir="${project.basedir}/allure-results/history"/>
+                                <copy todir="${project.basedir}/allure-results/history" failonerror="false"
+                                      overwrite="true">
+                                    <fileset dir="${project.basedir}/allure-history"/>
+                                </copy>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <!-- 2) po raporcie: zaktualizuj trwały bufor -->
+                    <execution>
+                        <id>backup-allure-history</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <mkdir dir="${project.basedir}/allure-history"/>
+                                <copy todir="${project.basedir}/allure-history" failonerror="false" overwrite="true">
+                                    <fileset dir="${project.basedir}/allure-report/history"/>
+                                </copy>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.16.1</version>
                 <configuration>
-                    <resultsDirectory>target/allure-results</resultsDirectory>
-                    <reportDirectory>target/allure-report</reportDirectory>
+                    <reportVersion>2.30.0</reportVersion>
+                    <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
+                    <reportDirectory>${project.basedir}/allure-report</reportDirectory>
                 </configuration>
                 <executions>
                     <execution>

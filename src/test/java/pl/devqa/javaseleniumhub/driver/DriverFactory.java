@@ -8,18 +8,31 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import java.time.Duration;
 
 public class DriverFactory {
 
-    private static final ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
+    private static final ThreadLocal<WebDriver> TL_DRIVER = new ThreadLocal<>();
 
-    private DriverFactory() {}
-
-    public static WebDriver getDriver() {
-        return driverThread.get();
+    private DriverFactory() {
     }
 
-    public static void initDriver(String browser, boolean headless) {
+    public static WebDriver getDriver() {
+        return TL_DRIVER.get();
+    }
+
+    public static void initDriver() {
+        if (TL_DRIVER.get() != null) return;
+
+        String browser = System.getProperty("browser", "chrome").toLowerCase();
+        boolean headless = Boolean.parseBoolean(System.getProperty("headless", "true"));
+        WebDriver driver = createDriver(browser, headless);
+        driver.manage().timeouts().implicitlyWait(Duration.ZERO);
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
+        TL_DRIVER.set(driver);
+    }
+
+    public static WebDriver createDriver(String browser, boolean headless) {
         WebDriver driver;
         switch (browser.toLowerCase()) {
             case "firefox":
@@ -49,13 +62,14 @@ public class DriverFactory {
                 driver = new ChromeDriver(chromeOptions);
                 break;
         }
-        driverThread.set(driver);
+        TL_DRIVER.set(driver);
+        return driver;
     }
 
     public static void quitDriver() {
-        if (driverThread.get() != null) {
-            driverThread.get().quit();
-            driverThread.remove();
+        if (TL_DRIVER.get() != null) {
+            TL_DRIVER.get().quit();
+            TL_DRIVER.remove();
         }
     }
 }
