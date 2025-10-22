@@ -72,7 +72,7 @@ esac
 
 if [ -z "$JAVA_HOME" ] ; then
   if [ -r /etc/gentoo-release ] ; then
-    JAVA_HOME=`java-config --jre-home`
+    JAVA_HOME=`java-pl.devqa.javaseleniumhub.config --jre-home`
   fi
 fi
 
@@ -166,7 +166,7 @@ fi
 CLASSWORLDS_LAUNCHER=org.codehaus.plexus.classworlds.launcher.Launcher
 
 # traverses directory structure from process work directory to filesystem root
-# first directory with .mvn subdirectory is considered project base directory
+# first directory with .mvn subdirectory is considered project pl.devqa.javaseleniumhub.base directory
 find_maven_basedir() {
 
   if [ -z "$1" ]
