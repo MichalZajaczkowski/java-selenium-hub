@@ -4,22 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26f62efd-8297-463f-a472-da28d6e28121" name="Changes" comment="add Allure attachments and test listener for enhanced reporting">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/data/Credentials.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/data/DataFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/data/UserData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/AccountCreatedPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/AccountDeletedPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/RegisterAccountPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/SignupLoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/components/HeaderNav.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/e2e/RegisterUserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/smoke/LoginUserPositiveTest.java" afterDir="false" />
+    <list default="true" id="26f62efd-8297-463f-a472-da28d6e28121" name="Changes" comment="add initial Allure configuration and implement user registration and login tests">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/smoke/LoginUserNegativeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/driver/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/driver/DriverFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/utils/CookieBannerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/utils/CookieBannerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/SignupLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/SignupLoginPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +247,7 @@
       <workItem from="1761474027811" duration="73000" />
       <workItem from="1761474128445" duration="207000" />
       <workItem from="1761474365289" duration="81000" />
-      <workItem from="1761474474339" duration="6525000" />
+      <workItem from="1761474474339" duration="7902000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -276,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761080536623</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add initial Allure configuration and implement user registration and login tests">
+      <option name="closed" value="true" />
+      <created>1761500822560</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761500822560</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +293,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="add initial configuration and base test setup for Java Selenium Hub" />
-    <option name="LAST_COMMIT_MESSAGE" value="add initial configuration and base test setup for Java Selenium Hub" />
+    <MESSAGE value="add initial Allure configuration and implement user registration and login tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="add initial Allure configuration and implement user registration and login tests" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

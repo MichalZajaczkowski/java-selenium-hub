@@ -37,6 +37,14 @@ public class SignupLoginPage {
     @FindBy(css = "button[data-qa='login-button']")
     private WebElement loginButton;
 
+    // --- Nagłówek sekcji logowania, do walidacji kroku z TC3/TC4 ---
+    @FindBy(xpath = "//h2[normalize-space()='Login to your account']")
+    private WebElement loginSectionHeader;
+
+    // --- Komunikat błędu dla niepoprawnych danych logowania (TC3) ---
+    @FindBy(xpath = "//p[contains(normalize-space(),\"Your email or password is incorrect!\")]")
+    private WebElement incorrectCredentialsError;
+
     public SignupLoginPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -74,5 +82,19 @@ public class SignupLoginPage {
     public HeaderNav submitLogin() {
         loginButton.click();
         return new HeaderNav(driver);
+    }
+
+    // ... (konstruktor i metody TC1/TC2)
+
+    /** Weryfikuje, że sekcja 'Login to your account' jest widoczna. */
+    @Step("Weryfikacja: 'Login to your account' jest widoczne")
+    public boolean isLoginSectionVisible() {
+        return loginSectionHeader.isDisplayed();
+    }
+
+    /** Zwraca true, gdy komunikat błędu niepoprawnych danych logowania jest widoczny. */
+    @Step("Weryfikacja błędu: 'Your email or password is incorrect!'")
+    public boolean isIncorrectCredentialsErrorVisible() {
+        return incorrectCredentialsError.isDisplayed();
     }
 }
