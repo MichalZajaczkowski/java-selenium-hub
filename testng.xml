@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="JavaSeleniumHubSuite"
-       parallel="tests"
+       parallel="classes"
        thread-count="4"
        preserve-order="true">
 
@@ -10,11 +9,13 @@
         <listener class-name="pl.devqa.javaseleniumhub.listeners.AllureTestListener"/>
     </listeners>
 
-    <!-- Jeden "test" obejmujący całą przestrzeń testów;
-         faktyczne uruchomienie zawęzimy z CLI przez -Dgroups / -DexcludedGroups -->
     <test name="AllTests">
-        <packages>
-            <package name="pl.devqa.javaseleniumhub.tests"/>
-        </packages>
+        <classes>
+            <class name="pl.devqa.javaseleniumhub.tests.e2e.RegisterUserTest"/>
+            <class name="pl.devqa.javaseleniumhub.tests.smoke.LoginUserPositiveTest"/>
+            <class name="pl.devqa.javaseleniumhub.tests.smoke.LoginUserNegativeTest"/>
+            <class name="pl.devqa.javaseleniumhub.tests.smoke.LogoutUserTest"/>
+            <class name="pl.devqa.javaseleniumhub.tests.smoke.BaseSmokeTest"/>
+        </classes>
     </test>
 </suite>

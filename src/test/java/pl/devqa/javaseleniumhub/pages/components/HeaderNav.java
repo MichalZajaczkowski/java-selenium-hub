@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pl.devqa.javaseleniumhub.pages.SignupLoginPage;
 
 /** Komponent Header/Nav – asercja 'Logged in as ...', link 'Delete Account'. */
 public class HeaderNav {
@@ -17,6 +18,10 @@ public class HeaderNav {
     // Link 'Delete Account' – <a href="/delete_account">Delete Account</a>
     @FindBy(css = "div.header-middle ul.nav.navbar-nav a[href='/delete_account']")
     private WebElement deleteAccountLink;
+
+    // 'Logout'
+    @FindBy(css = "div.header-middle ul.nav.navbar-nav a[href='/logout']")
+    private WebElement logoutLink;
 
     public HeaderNav(WebDriver driver) {
         this.driver = driver;
@@ -36,9 +41,21 @@ public class HeaderNav {
         return deleteAccountLink.isDisplayed();
     }
 
+    /** Czy link 'Logout' jest widoczny. */
+    @Step("Weryfikacja obecności linku 'Logout'")
+    public boolean isLogoutPresent() {
+        return logoutLink.isDisplayed();
+    }
+
     /** Klik 'Delete Account' – przejście do procesu kasowania konta. */
     @Step("Klik 'Delete Account'")
     public void clickDeleteAccount() {
         deleteAccountLink.click();
+    }
+
+    @Step("Klik 'Logout'")
+    public SignupLoginPage clickLogout() {
+        logoutLink.click();
+        return new SignupLoginPage(driver);
     }
 }

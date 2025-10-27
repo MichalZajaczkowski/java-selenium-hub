@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26f62efd-8297-463f-a472-da28d6e28121" name="Changes" comment="add initial Allure configuration and implement user registration and login tests">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/smoke/LoginUserNegativeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="26f62efd-8297-463f-a472-da28d6e28121" name="Changes" comment="add negative login test case and update SignupLoginPage for error handling">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/smoke/LogoutUserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/SignupLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/SignupLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/components/HeaderNav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/components/HeaderNav.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +90,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.java-selenium-hub [clean].executor": "Run",
+    "Maven.java-selenium-hub [install].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -98,14 +101,21 @@
     "TestNG.HomeSmokeTest.executor": "Run",
     "TestNG.HomeSmokeTest.tc0_verifyHomePageLoaded.executor": "Run",
     "TestNG.LoginUserPositiveTest.executor": "Run",
+    "TestNG.LoginUserPositiveTest2.executor": "Run",
+    "TestNG.LoginUserPositiveTest2.tc2_loginUserWithCorrectCredentials_dp.executor": "Run",
+    "TestNG.LogoutUserTest.executor": "Run",
     "TestNG.RegisterUserTest.executor": "Run",
     "TestNG.RegisterUserTest.tc1_registerUser.executor": "Run",
+    "TestNG.pl.devqa.javaseleniumhub.tests.executor": "Run",
     "git-widget-placeholder": "first-test",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/src/test/java/pl/devqa/javaseleniumhub/data",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -121,26 +131,120 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginUserPositiveTest">
-    <configuration name="BaseSmokeTest.tc0_verifyHomePageLoaded" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml">
+    <configuration name="C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="java-selenium-hub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.smoke.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
-      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.BaseSmokeTest" />
-      <option name="METHOD_NAME" value="tc0_verifyHomePageLoaded" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomePageTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginUserPositiveTest2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="java-selenium-hub" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.smoke.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
+      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.LoginUserPositiveTest2" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginUserPositiveTest2.tc2_loginUserWithCorrectCredentials_dp" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="java-selenium-hub" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.smoke.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
+      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.LoginUserPositiveTest2" />
+      <option name="METHOD_NAME" value="tc2_loginUserWithCorrectCredentials_dp" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LogoutUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="java-selenium-hub" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.smoke.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
+      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.LogoutUserTest" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="TestNG" nameIsGenerated="true">
+      <module name="java-selenium-hub" />
+      <shortenClasspath name="NONE" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pl.devqa.javaseleniumhub.tests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="java-selenium-hub" />
       <extension name="coverage">
         <pattern>
@@ -148,74 +252,29 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.HomePageTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginUserPositiveTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="java-selenium-hub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.smoke.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
-      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.LoginUserPositiveTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="java-selenium-hub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.e2e.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.e2e" />
-      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.e2e.RegisterUserTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterUserTest.tc1_registerUser" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="java-selenium-hub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.e2e.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.e2e" />
-      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.e2e.RegisterUserTest" />
-      <option name="METHOD_NAME" value="tc1_registerUser" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="TestNG.Unnamed" />
+      <item itemvalue="TestNG.C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml" />
+      <item itemvalue="TestNG.pl.devqa.javaseleniumhub.tests" />
+      <item itemvalue="TestNG.LoginUserPositiveTest2" />
+      <item itemvalue="TestNG.LoginUserPositiveTest2.tc2_loginUserWithCorrectCredentials_dp" />
+      <item itemvalue="TestNG.LogoutUserTest" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginUserPositiveTest" />
-        <item itemvalue="TestNG.RegisterUserTest.tc1_registerUser" />
-        <item itemvalue="TestNG.RegisterUserTest" />
-        <item itemvalue="TestNG.HomePageTests" />
-        <item itemvalue="TestNG.BaseSmokeTest.tc0_verifyHomePageLoaded" />
+        <item itemvalue="TestNG.C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml" />
+        <item itemvalue="TestNG.pl.devqa.javaseleniumhub.tests" />
+        <item itemvalue="TestNG.LogoutUserTest" />
+        <item itemvalue="TestNG.LoginUserPositiveTest2" />
+        <item itemvalue="TestNG.LoginUserPositiveTest2.tc2_loginUserWithCorrectCredentials_dp" />
       </list>
     </recent_temporary>
   </component>
@@ -247,7 +306,7 @@
       <workItem from="1761474027811" duration="73000" />
       <workItem from="1761474128445" duration="207000" />
       <workItem from="1761474365289" duration="81000" />
-      <workItem from="1761474474339" duration="7902000" />
+      <workItem from="1761474474339" duration="18975000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -273,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761500822560</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add negative login test case and update SignupLoginPage for error handling">
+      <option name="closed" value="true" />
+      <created>1761504781905</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761504781905</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +361,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="add initial configuration and base test setup for Java Selenium Hub" />
     <MESSAGE value="add initial Allure configuration and implement user registration and login tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="add initial Allure configuration and implement user registration and login tests" />
+    <MESSAGE value="add negative login test case and update SignupLoginPage for error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="add negative login test case and update SignupLoginPage for error handling" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

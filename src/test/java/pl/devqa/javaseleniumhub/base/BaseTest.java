@@ -22,6 +22,10 @@ public class BaseTest {
         driver.get(AppConfig.BASE_URL + UrlPaths.ROOT);
         CookieBannerUtils.acceptCookieBannerIfPresent(driver);
     }
+    @BeforeMethod(alwaysRun = true)
+    public void printThread() {
+        System.out.println(">>> Running on thread: " + Thread.currentThread().getId());
+    }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult result) {
