@@ -49,6 +49,13 @@ public class SignupLoginPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+    // --- Nagłówek sekcji 'New User Signup!' (opcjonalna weryfikacja kroku 5 TC5) ---
+    @FindBy(xpath = "//h2[normalize-space()='New User Signup!']")
+    private WebElement newUserSignupHeader;
+
+    // --- Komunikat błędu dla istniejącego e-maila ---
+    @FindBy(xpath = "//p[contains(normalize-space(), 'Email Address already exist!')]")
+    private WebElement existingEmailError;
 
     // ---------------- TC1 (pozostawiamy dla kompletności) ----------------
     @Step("Wprowadź dane do 'New User Signup!': {name}, {email}")
@@ -96,5 +103,17 @@ public class SignupLoginPage {
     @Step("Weryfikacja błędu: 'Your email or password is incorrect!'")
     public boolean isIncorrectCredentialsErrorVisible() {
         return incorrectCredentialsError.isDisplayed();
+    }
+
+    /** Weryfikuje, że sekcja 'New User Signup!' jest widoczna. */
+    @Step("Weryfikacja: 'New User Signup!' jest widoczne")
+    public boolean isNewUserSignupVisible() {
+        return newUserSignupHeader.isDisplayed();
+    }
+
+    /** Weryfikuje widoczność błędu 'Email Address already exist!'. */
+    @Step("Weryfikacja błędu: 'Email Address already exist!'")
+    public boolean isExistingEmailErrorVisible() {
+        return existingEmailError.isDisplayed();
     }
 }

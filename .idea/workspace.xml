@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26f62efd-8297-463f-a472-da28d6e28121" name="Changes" comment="add negative login test case and update SignupLoginPage for error handling">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/smoke/LogoutUserTest.java" afterDir="false" />
+    <list default="true" id="26f62efd-8297-463f-a472-da28d6e28121" name="Changes" comment="add logout functionality and implement LogoutUserTest for verification, add thread-count">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/smoke/RegisterUserWithExistingEmailTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/components/HeaderNav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/components/HeaderNav.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/SignupLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/SignupLoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,6 +96,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "TestNG.BaseSmokeTest.executor": "Run",
+    "TestNG.C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml.executor": "Profiler#2",
     "TestNG.HomePageTests.executor": "Run",
     "TestNG.HomeSmokeTest.executor": "Run",
     "TestNG.HomeSmokeTest.tc0_verifyHomePageLoaded.executor": "Run",
@@ -106,6 +106,8 @@
     "TestNG.LogoutUserTest.executor": "Run",
     "TestNG.RegisterUserTest.executor": "Run",
     "TestNG.RegisterUserTest.tc1_registerUser.executor": "Run",
+    "TestNG.RegisterUserWithExistingEmailTest.executor": "Run",
+    "TestNG.RegisterUserWithExistingEmailTest.tc5_registerUserWithExistingEmail.executor": "Debug",
     "TestNG.pl.devqa.javaseleniumhub.tests.executor": "Run",
     "git-widget-placeholder": "first-test",
     "kotlin-language-version-configured": "true",
@@ -142,61 +144,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginUserPositiveTest2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="java-selenium-hub" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.smoke.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
-      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.LoginUserPositiveTest2" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginUserPositiveTest2.tc2_loginUserWithCorrectCredentials_dp" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="java-selenium-hub" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.smoke.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
-      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.LoginUserPositiveTest2" />
-      <option name="METHOD_NAME" value="tc2_loginUserWithCorrectCredentials_dp" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LogoutUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="java-selenium-hub" />
       <shortenClasspath name="NONE" />
@@ -218,6 +165,41 @@
         <value defaultName="moduleWithDependencies" />
       </option>
       <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterUserWithExistingEmailTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="java-selenium-hub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.smoke.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
+      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.RegisterUserWithExistingEmailTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterUserWithExistingEmailTest.tc5_registerUserWithExistingEmail" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="java-selenium-hub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.smoke.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
+      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.RegisterUserWithExistingEmailTest" />
+      <option name="METHOD_NAME" value="tc5_registerUserWithExistingEmail" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -263,18 +245,18 @@
     <list>
       <item itemvalue="TestNG.Unnamed" />
       <item itemvalue="TestNG.C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml" />
+      <item itemvalue="TestNG.RegisterUserWithExistingEmailTest" />
+      <item itemvalue="TestNG.RegisterUserWithExistingEmailTest.tc5_registerUserWithExistingEmail" />
       <item itemvalue="TestNG.pl.devqa.javaseleniumhub.tests" />
-      <item itemvalue="TestNG.LoginUserPositiveTest2" />
-      <item itemvalue="TestNG.LoginUserPositiveTest2.tc2_loginUserWithCorrectCredentials_dp" />
       <item itemvalue="TestNG.LogoutUserTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml" />
+        <item itemvalue="TestNG.RegisterUserWithExistingEmailTest.tc5_registerUserWithExistingEmail" />
+        <item itemvalue="TestNG.RegisterUserWithExistingEmailTest" />
         <item itemvalue="TestNG.pl.devqa.javaseleniumhub.tests" />
         <item itemvalue="TestNG.LogoutUserTest" />
-        <item itemvalue="TestNG.LoginUserPositiveTest2" />
-        <item itemvalue="TestNG.LoginUserPositiveTest2.tc2_loginUserWithCorrectCredentials_dp" />
       </list>
     </recent_temporary>
   </component>
@@ -306,7 +288,7 @@
       <workItem from="1761474027811" duration="73000" />
       <workItem from="1761474128445" duration="207000" />
       <workItem from="1761474365289" duration="81000" />
-      <workItem from="1761474474339" duration="18975000" />
+      <workItem from="1761474474339" duration="28325000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -340,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761504781905</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add logout functionality and implement LogoutUserTest for verification, add thread-count">
+      <option name="closed" value="true" />
+      <created>1761595756609</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761595756609</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +352,8 @@
     <MESSAGE value="add initial configuration and base test setup for Java Selenium Hub" />
     <MESSAGE value="add initial Allure configuration and implement user registration and login tests" />
     <MESSAGE value="add negative login test case and update SignupLoginPage for error handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="add negative login test case and update SignupLoginPage for error handling" />
+    <MESSAGE value="add logout functionality and implement LogoutUserTest for verification, add thread-count" />
+    <option name="LAST_COMMIT_MESSAGE" value="add logout functionality and implement LogoutUserTest for verification, add thread-count" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
