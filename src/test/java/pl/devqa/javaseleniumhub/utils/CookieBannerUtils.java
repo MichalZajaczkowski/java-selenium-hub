@@ -1,5 +1,6 @@
 package pl.devqa.javaseleniumhub.utils;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,6 +37,7 @@ public final class CookieBannerUtils {
      *
      * @param driver instancja WebDriver
      */
+    @Step("Akceptacja banera cookies (jeśli obecny)")
     public static void acceptCookieBannerIfPresent(WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, AppConfig.DEFAULT_TIMEOUT);
         if (isCookieBannerVisible(driver)) {

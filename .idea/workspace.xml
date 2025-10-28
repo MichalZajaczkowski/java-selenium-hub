@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26f62efd-8297-463f-a472-da28d6e28121" name="Changes" comment="add initial configuration and base test setup for Java Selenium Hub">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/listeners/AllureTestListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/utils/AllureAttachments.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/utils/WaitUtils.java" afterDir="false" />
+    <list default="true" id="26f62efd-8297-463f-a472-da28d6e28121" name="Changes" comment="add test for user registration with existing email and update SignupLoginPage for error handling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/base/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/driver/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/driver/DriverFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/smoke/HomeSmokeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/smoke/BaseSmokeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/SignupLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/pages/SignupLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/smoke/RegisterUserWithExistingEmailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/devqa/javaseleniumhub/tests/smoke/RegisterUserWithExistingEmailTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +44,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="first-test" />
+                    <option name="lastUsedInstant" value="1761157528" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="first-config" />
                     <option name="lastUsedInstant" value="1761069747" />
@@ -90,25 +87,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;TestNG.BaseSmokeTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.HomePageTests.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.HomeSmokeTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.HomeSmokeTest.tc0_verifyHomePageLoaded.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;first-config&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.java-selenium-hub [clean].executor": "Run",
+    "Maven.java-selenium-hub [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "TestNG.BaseSmokeTest.executor": "Run",
+    "TestNG.C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml.executor": "Run",
+    "TestNG.HomePageTests.executor": "Run",
+    "TestNG.HomeSmokeTest.executor": "Run",
+    "TestNG.HomeSmokeTest.tc0_verifyHomePageLoaded.executor": "Run",
+    "TestNG.LoginUserPositiveTest.executor": "Run",
+    "TestNG.LoginUserPositiveTest2.executor": "Run",
+    "TestNG.LoginUserPositiveTest2.tc2_loginUserWithCorrectCredentials_dp.executor": "Run",
+    "TestNG.LogoutUserTest.executor": "Run",
+    "TestNG.RegisterUserTest.executor": "Run",
+    "TestNG.RegisterUserTest.tc1_registerUser.executor": "Run",
+    "TestNG.RegisterUserWithExistingEmailTest.executor": "Run",
+    "TestNG.RegisterUserWithExistingEmailTest.tc5_registerUserWithExistingEmail.executor": "Debug",
+    "TestNG.RegisterUserWithExistingEmailTest.tc5_signupEmailClientSideValidation_invalidFormats.executor": "Run",
+    "TestNG.pl.devqa.javaseleniumhub.tests.executor": "Run",
+    "git-widget-placeholder": "first-test",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/src/test/java/pl/devqa/javaseleniumhub/data",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\michal.zajaczkowski\devQa\java-selenium-hub\src\test\java\pl\devqa\javaseleniumhub\data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\michal.zajaczkowski\devQa\java-selenium-hub\src\test\resources" />
       <recent name="C:\Users\michal.zajaczkowski\devQa\java-selenium-hub\src" />
@@ -117,8 +134,18 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.BaseSmokeTest">
-    <configuration name="BaseSmokeTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml">
+    <configuration name="C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="java-selenium-hub" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterUserWithExistingEmailTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="java-selenium-hub" />
       <extension name="coverage">
         <pattern>
@@ -127,7 +154,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
-      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.BaseSmokeTest" />
+      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.RegisterUserWithExistingEmailTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -135,7 +162,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BaseSmokeTest.tc0_verifyHomePageLoaded" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="RegisterUserWithExistingEmailTest.tc5_registerUserWithExistingEmail" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="java-selenium-hub" />
       <extension name="coverage">
         <pattern>
@@ -144,8 +171,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
-      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.BaseSmokeTest" />
-      <option name="METHOD_NAME" value="tc0_verifyHomePageLoaded" />
+      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.RegisterUserWithExistingEmailTest" />
+      <option name="METHOD_NAME" value="tc5_registerUserWithExistingEmail" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -153,7 +180,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomePageTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="RegisterUserWithExistingEmailTest.tc5_signupEmailClientSideValidation_invalidFormats" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="java-selenium-hub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.devqa.javaseleniumhub.tests.smoke.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests.smoke" />
+      <option name="MAIN_CLASS_NAME" value="pl.devqa.javaseleniumhub.tests.smoke.RegisterUserWithExistingEmailTest" />
+      <option name="METHOD_NAME" value="tc5_signupEmailClientSideValidation_invalidFormats" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="TestNG" nameIsGenerated="true">
+      <module name="java-selenium-hub" />
+      <shortenClasspath name="NONE" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pl.devqa.javaseleniumhub.tests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="java-selenium-hub" />
       <extension name="coverage">
         <pattern>
@@ -161,22 +226,34 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.HomePageTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PACKAGE_NAME" value="pl.devqa.javaseleniumhub.tests" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="TestNG.Unnamed" />
+      <item itemvalue="TestNG.C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml" />
+      <item itemvalue="TestNG.RegisterUserWithExistingEmailTest" />
+      <item itemvalue="TestNG.RegisterUserWithExistingEmailTest.tc5_registerUserWithExistingEmail" />
+      <item itemvalue="TestNG.RegisterUserWithExistingEmailTest.tc5_signupEmailClientSideValidation_invalidFormats" />
+      <item itemvalue="TestNG.pl.devqa.javaseleniumhub.tests" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.BaseSmokeTest" />
-        <item itemvalue="TestNG.BaseSmokeTest.tc0_verifyHomePageLoaded" />
-        <item itemvalue="TestNG.HomePageTests" />
+        <item itemvalue="TestNG.C:/Users/michal.zajaczkowski/devQa/java-selenium-hub/testng.xml" />
+        <item itemvalue="TestNG.RegisterUserWithExistingEmailTest" />
+        <item itemvalue="TestNG.RegisterUserWithExistingEmailTest.tc5_signupEmailClientSideValidation_invalidFormats" />
+        <item itemvalue="TestNG.RegisterUserWithExistingEmailTest.tc5_registerUserWithExistingEmail" />
+        <item itemvalue="TestNG.pl.devqa.javaseleniumhub.tests" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SeleniumInternalSettingsState">
+    <option name="lastUrl" value="https://automationexercise.com/" />
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -198,6 +275,12 @@
       <workItem from="1761063421110" duration="15694000" />
       <workItem from="1761111400680" duration="5580000" />
       <workItem from="1761117249719" duration="8249000" />
+      <workItem from="1761471884564" duration="1581000" />
+      <workItem from="1761473899583" duration="90000" />
+      <workItem from="1761474027811" duration="73000" />
+      <workItem from="1761474128445" duration="207000" />
+      <workItem from="1761474365289" duration="81000" />
+      <workItem from="1761474474339" duration="30192000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -215,7 +298,39 @@
       <option name="project" value="LOCAL" />
       <updated>1761080536623</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add initial Allure configuration and implement user registration and login tests">
+      <option name="closed" value="true" />
+      <created>1761500822560</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761500822560</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add negative login test case and update SignupLoginPage for error handling">
+      <option name="closed" value="true" />
+      <created>1761504781905</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761504781905</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add logout functionality and implement LogoutUserTest for verification, add thread-count">
+      <option name="closed" value="true" />
+      <created>1761595756609</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761595756609</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add test for user registration with existing email and update SignupLoginPage for error handling">
+      <option name="closed" value="true" />
+      <created>1761673259743</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761673259743</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +350,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="add initial configuration and base test setup for Java Selenium Hub" />
-    <option name="LAST_COMMIT_MESSAGE" value="add initial configuration and base test setup for Java Selenium Hub" />
+    <MESSAGE value="add initial Allure configuration and implement user registration and login tests" />
+    <MESSAGE value="add negative login test case and update SignupLoginPage for error handling" />
+    <MESSAGE value="add logout functionality and implement LogoutUserTest for verification, add thread-count" />
+    <MESSAGE value="add test for user registration with existing email and update SignupLoginPage for error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test for user registration with existing email and update SignupLoginPage for error handling" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
