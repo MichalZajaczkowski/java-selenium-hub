@@ -1,6 +1,7 @@
 package pl.devqa.javaseleniumhub.pages;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -115,5 +116,31 @@ public class SignupLoginPage {
     @Step("Weryfikacja błędu: 'Email Address already exist!'")
     public boolean isExistingEmailErrorVisible() {
         return existingEmailError.isDisplayed();
+    }
+
+    /** Zwraca true, jeśli pole 'signup-email' przechodzi walidację HTML5 (validity.valid). */
+    @Step("Sprawdź poprawność (HTML5) pola 'signup-email' dla wartości: {email}")
+    public boolean isSignupEmailValid(String email) {
+        signupEmailInput.clear();
+        signupEmailInput.sendKeys(email);
+        // Nie wypełniamy niczego więcej i nie submitujemy – tu tylko sprawdzamy stan pola.
+        return (Boolean) ((JavascriptExecutor) driver)
+                .executeScript("return arguments[0].validity.valid;", signupEmailInput);
+    }
+
+    /** Klik 'Signup' i zwróć komunikat walidacyjny HTML5 z pola e-mail (może być pusty, gdy valid). */
+    @Step("Klik 'Signup' i odczytaj komunikat walidacyjny pola e-mail")
+    public String clickSignupAndGetEmailValidationMessage(String name, String email) {
+        signupNameInput.clear();
+        signupNameInput.sendKeys(name);
+
+        signupEmailInput.clear();
+        signupEmailInput.sendKeys(email);
+
+        signupButton.click(); // wywoła natywną walidację formularza
+
+        // Zwracamy komunikat przeglądarki; jest zlokalizowany (PL/EN itp.).
+        return (String) ((JavascriptExecutor) driver)
+                .executeScript("return arguments[0].validationMessage;", signupEmailInput);
     }
 }
